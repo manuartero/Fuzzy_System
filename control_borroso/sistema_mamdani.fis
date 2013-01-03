@@ -1,0 +1,62 @@
+[System]
+Name='sistema_mamdani'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Tiempo-Subida'
+Range=[0 1]
+NumMFs=3
+MF1='Bajo':'trapmf',[-5 -0.5 0.4 0.5]
+MF2='Normal':'gaussmf',[0.045 0.5]
+MF3='Alto':'trapmf',[0.5 0.6 1.4 1.4]
+
+[Input2]
+Name='Tiempo-Pico'
+Range=[0 1]
+NumMFs=3
+MF1='Bajo':'trapmf',[-5 -0.5 0.4 0.5]
+MF2='Medio':'gaussmf',[0.045 0.5]
+MF3='Alto':'trapmf',[0.5 0.6 1.4 1.4]
+
+[Input3]
+Name='Sobrelongación'
+Range=[0 1]
+NumMFs=3
+MF1='Bajo':'trapmf',[-5 -0.5 0.4 0.5]
+MF2='Medio':'gaussmf',[0.045 0.5]
+MF3='Alto':'trapmf',[0.5 0.6 1.4 1.4]
+
+[Output1]
+Name='modificar-P'
+Range=[0 1]
+NumMFs=3
+MF1='Bajar':'trapmf',[-5 -0.5 0.4 0.5]
+MF2='Mantener':'gaussmf',[0.045 0.5]
+MF3='Subir':'trapmf',[0.5 0.6 1.4 1.4]
+
+[Output2]
+Name='modificar-I'
+Range=[0 1]
+NumMFs=3
+MF1='Bajar':'trapmf',[-5 -0.5 0.4 0.5]
+MF2='Mantener':'gaussmf',[0.045 0.5]
+MF3='Subir':'trapmf',[0.5 0.6 1.4 1.4]
+
+[Output3]
+Name='modificar-D'
+Range=[0 1]
+NumMFs=3
+MF1='Bajar':'trapmf',[-5 -0.5 0.4 0.5]
+MF2='Mantener':'gaussmf',[0.045 0.5]
+MF3='Subir':'trapmf',[0.5 0.6 1.4 1.4]
+
+[Rules]
