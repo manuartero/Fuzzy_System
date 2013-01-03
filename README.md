@@ -1,9 +1,13 @@
 #IAAC: Control borroso (práctica 6)
 
-###Cómo ejecutar el sistema experto
+###Ejecutar el sistema experto
 ejecutar el archivo ```control_experto.m```
+ - establece la planta a simular (características)
+ - hace la presintonía con ZN
+ - simula el sistema y muestra los resultados
+ - llama al sistema experto
 
-###Dónde está el código del sistema experto
+###Código del sistema experto
 archivo ```sistema_experto.m```
 
 ###Especificaciones del sistema
