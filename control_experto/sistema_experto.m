@@ -27,28 +27,8 @@ function pid=sistema_experto(pid,num,den,espec)
   tiempoSubida=0;
   elong=0;
   
-  while ~salir
-     
-     %% Reglas Vity para tr
-     % aumentar kp
-     if (espec(1))<tr 
-        pid(1)=pid(1)+0.05; 
-        pid(3)=pid(3)+0.03;
-     % disminuir kp     
-     elseif (espec(1))>tr
-        pid(1)=pid(1)-0.08;
-     end 
-      
-     %% Reglas Vity para sobrelongacion
-     % aumentar sobrelongacion 
-     if (espec(3)) < Mp
-        pid(3)=pid(3)+0.03;    
-     % disminuir sobrelongacion
-     elseif (espec(3)) > Mp 
-        pid(3)=pid(3)-0.03;
-     end
-     
-     %% Reglas Xaby para tiempo subida
+  while ~salir 
+     %% Reglas para tiempo subida
      if ((tr>espec(1)*2) && ~(tiempoSubida))
         pid(1)=pid(1)*1.75;
         tiempoSubida=1;
@@ -69,8 +49,12 @@ function pid=sistema_experto(pid,num,den,espec)
         pid(2)=pid(2) * 1.25;
         tiempoSubida=1;
      end
-    
-    %% Reglas Xaby para sobrelongacion
+     % disminuir kp     
+     if ((espec(1))>tr && ~(tiempoSubida))
+        pid(1)=pid(1)-0.08;
+        tiempoSubida=1;
+     end 
+    %% Reglas para sobrelongacion
     if ((Mp>espec(3)*2) && ~(elong))
         pid(2)=pid(2)*0.1;
         elong=1;
@@ -91,20 +75,25 @@ function pid=sistema_experto(pid,num,den,espec)
         pid(1)=pid(1)*0.63;
         elong=1;
     end
-
+    % disminuir sobrelongacion
+    if ((espec(3)) > Mp && ~(elong)) 
+        pid(3)=pid(3)-0.03;
+        elong=1;
+    end
+    
     %% Nueva situacion
     % Caracteristicas del sistema bajo la nueva situacion
     [tout,yout]=simular(pid,num,den,tr,tp,Mp,ts,ys);
     [tr,tp,Mp,ts,ys]=caracteristicas(tout,yout);
     
     % Si se cumplen las especificaciones, entonces salir
-    if ~(tiempoSubida) && ~(elong)
-        salir=1;
+    if ( (tr <= espec(1)&& Mp<espec(3)) || (~(tiempoSubida) && ~(elong)) )
+            salir=1;
     else               
         tiempoSubida=0;
         elong=0;
-    end
-  end
+    end    
+   end
   
 % ---------------------------
 
