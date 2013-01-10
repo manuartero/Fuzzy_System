@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.8"
+    ComputedModelVersion    "1.9"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "manu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 10 10:36:18 2013"
-  RTWModifiedTimeStamp	  279714432
-  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  LastModifiedDate	  "Thu Jan 10 11:02:26 2013"
+  RTWModifiedTimeStamp	  279716331
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -110,7 +110,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.10.0"
 	  StartTime		  "0.0"
-	  StopTime		  "100.0"
+	  StopTime		  "1000.0"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -674,7 +674,7 @@ Model {
   }
   System {
     Name		    "sistema_fuzzy"
-    Location		    [2, 84, 1918, 1008]
+    Location		    [2, 93, 1900, 1017]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -774,7 +774,7 @@ Model {
       Position		      [745, 439, 775, 471]
       Floating		      off
       Location		      [10, 62, 952, 1022]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles

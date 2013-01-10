@@ -1,5 +1,5 @@
 Model {
-  Name			  "analizador"
+  Name			  "modelo_sistema_original"
   Version		  7.5
   MdlSubVersion		  0
   GraphicalInterface {
@@ -25,7 +25,7 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "manu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 10 09:27:30 2013"
+  LastModifiedDate	  "Thu Jan 10 11:02:32 2013"
   RTWModifiedTimeStamp	  279710582
   ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
@@ -665,8 +665,8 @@ Model {
     }
   }
   System {
-    Name		    "analizador"
-    Location		    [329, 287, 1388, 687]
+    Name		    "modelo_sistema_original"
+    Location		    [674, 432, 1733, 832]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -758,8 +758,8 @@ Model {
       Ports		      [1]
       Position		      [740, 289, 770, 321]
       Floating		      off
-      Location		      [1, 53, 1921, 1031]
-      Open		      on
+      Location		      [5, 53, 1925, 1031]
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles

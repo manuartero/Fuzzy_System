@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "manu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 10 10:41:50 2013"
-  RTWModifiedTimeStamp	  279715308
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Thu Jan 10 11:18:08 2013"
+  RTWModifiedTimeStamp	  279717282
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -110,7 +110,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.10.0"
 	  StartTime		  "0.0"
-	  StopTime		  "100.0"
+	  StopTime		  "300.0"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -674,7 +674,7 @@ Model {
   }
   System {
     Name		    "combinacion"
-    Location		    [2, 84, 1918, 1008]
+    Location		    [539, 219, 1770, 878]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -764,8 +764,8 @@ Model {
       Ports		      [1]
       Position		      [1050, 354, 1080, 386]
       Floating		      off
-      Location		      [590, 361, 1231, 698]
-      Open		      off
+      Location		      [1089, 376, 1730, 713]
+      Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
       List {
