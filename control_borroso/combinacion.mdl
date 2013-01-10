@@ -1,12 +1,12 @@
 Model {
-  Name			  "sistema_fuzzy"
+  Name			  "combinacion"
   Version		  7.5
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.7"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -19,15 +19,15 @@ Model {
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
   MaxMDLFileLineLength	  120
-  Created		  "Thu Jan 10 10:07:34 2013"
+  Created		  "Thu Jan 10 10:37:45 2013"
   Creator		  "manu"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "manu"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 10 10:24:19 2013"
-  RTWModifiedTimeStamp	  279714432
-  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  LastModifiedDate	  "Thu Jan 10 10:41:50 2013"
+  RTWModifiedTimeStamp	  279715308
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -673,8 +673,8 @@ Model {
     }
   }
   System {
-    Name		    "sistema_fuzzy"
-    Location		    [11, 93, 949, 999]
+    Name		    "combinacion"
+    Location		    [2, 84, 1918, 1008]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -688,23 +688,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    12
+    SIDHighWatermark	    21
     Block {
       BlockType		      BusCreator
       Name		      "Bus\nCreator"
       SID		      1
       Ports		      [2, 1]
-      Position		      [435, 136, 440, 174]
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      BusCreator
-      Name		      "Bus\nCreator1"
-      SID		      2
-      Ports		      [2, 1]
-      Position		      [830, 126, 835, 164]
+      Position		      [465, 206, 470, 244]
       ShowName		      off
       Inputs		      "2"
       DisplayOption	      "bar"
@@ -712,9 +702,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Fuzzy Logic \nController1"
-      SID		      9
+      SID		      3
       Ports		      [1, 1]
-      Position		      [510, 131, 570, 179]
+      Position		      [540, 201, 600, 249]
       LibraryVersion	      "1.179"
       FontName		      "Arial"
       SourceBlock	      "fuzblock/Fuzzy Logic \nController"
@@ -734,48 +724,50 @@ Model {
       Name		      "Integrator"
       SID		      4
       Ports		      [1, 1]
-      Position		      [335, 185, 365, 215]
+      Position		      [365, 255, 395, 285]
     }
     Block {
       BlockType		      Mux
-      Name		      "Mux1"
-      SID		      11
-      Ports		      [3, 1]
-      Position		      [630, 424, 640, 486]
+      Name		      "Mux"
+      SID		      15
+      Ports		      [2, 1]
+      Position		      [905, 339, 915, 401]
       ShowName		      off
-      Inputs		      "3"
+      Inputs		      "2"
       DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PID Controller1"
+      SID		      10
+      Ports		      [1, 1]
+      Position		      [450, 480, 480, 510]
+      LibraryVersion	      "1.10"
+      SourceBlock	      "simulink_need_slupdate/PID Controller"
+      SourceType	      "PID Controller"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      P			      "6.36"
+      I			      "0.4968"
+      D			      "20.3561"
     }
     Block {
       BlockType		      Scope
       Name		      "Scope"
-      SID		      5
+      SID		      21
       Ports		      [1]
-      Position		      [865, 129, 895, 161]
+      Position		      [1050, 354, 1080, 386]
       Floating		      off
-      Location		      [6, 48, 1686, 1009]
+      Location		      [590, 361, 1231, 698]
       Open		      off
       NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      YMin		      "-0.5"
-      YMax		      "1.1"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      12
-      Ports		      [1]
-      Position		      [745, 439, 775, 471]
-      Floating		      off
-      Location		      [1, 53, 1921, 1031]
-      Open		      off
-      NumInputPorts	      "1"
+      ZoomMode		      "yonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -783,7 +775,6 @@ Model {
       TimeRange		      "100"
       YMin		      "0"
       YMax		      "1.4"
-      SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -792,7 +783,7 @@ Model {
       BlockType		      Step
       Name		      "Step"
       SID		      6
-      Position		      [165, 155, 195, 185]
+      Position		      [90, 300, 120, 330]
       SampleTime	      "0"
     }
     Block {
@@ -800,7 +791,7 @@ Model {
       Name		      "Sum"
       SID		      7
       Ports		      [2, 1]
-      Position		      [260, 160, 280, 180]
+      Position		      [290, 230, 310, 250]
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|+-"
@@ -810,27 +801,38 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      13
+      Ports		      [2, 1]
+      Position		      [290, 485, 310, 505]
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+    }
+    Block {
       BlockType		      TransferFcn
       Name		      "Transfer Fcn"
       SID		      8
-      Position		      [660, 137, 720, 173]
+      Position		      [635, 207, 695, 243]
       Numerator		      "[1.5]"
+      Denominator	      "[50 43 3 1]"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "Transfer Fcn1"
+      SID		      14
+      Position		      [625, 477, 695, 513]
+      Numerator		      "1.5"
       Denominator	      "[50 43 3 1]"
     }
     Line {
       SrcBlock		      "Fuzzy Logic \nController1"
       SrcPort		      1
-      Points		      [30, 0]
-      Branch {
-	DstBlock		"Transfer Fcn"
-	DstPort			1
-      }
-      Branch {
-	Labels			[1, 0]
-	Points			[0, 320]
-	DstBlock		"Mux1"
-	DstPort			3
-      }
+      DstBlock		      "Transfer Fcn"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Sum"
@@ -842,17 +844,9 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[0, 25]
-	Branch {
-	  Points		  [0, 5]
-	  DstBlock		  "Integrator"
-	  DstPort		  1
-	}
-	Branch {
-	  Points		  [0, 240]
-	  DstBlock		  "Mux1"
-	  DstPort		  1
-	}
+	Points			[0, 30]
+	DstBlock		"Integrator"
+	DstPort			1
       }
     }
     Line {
@@ -864,56 +858,71 @@ Model {
     Line {
       SrcBlock		      "Transfer Fcn"
       SrcPort		      1
-      Points		      [40, 0]
+      Points		      [80, 0; 0, 50]
       Branch {
-	Points			[0, 115; -495, 0]
+	Points			[0, 65; -480, 0]
 	DstBlock		"Sum"
 	DstPort			2
       }
       Branch {
-	DstBlock		"Bus\nCreator1"
-	DstPort			2
-      }
-    }
-    Line {
-      SrcBlock		      "Step"
-      SrcPort		      1
-      Points		      [20, 0]
-      Branch {
-	DstBlock		"Sum"
+	Points			[60, 0; 0, 80]
+	DstBlock		"Mux"
 	DstPort			1
       }
-      Branch {
-	Points			[0, -55; 545, 0; 0, 20]
-	DstBlock		"Bus\nCreator1"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Bus\nCreator1"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "Integrator"
       SrcPort		      1
-      Points		      [35, 0]
+      Points		      [35, 0; 0, -35]
+      DstBlock		      "Bus\nCreator"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "PID Controller1"
+      SrcPort		      1
+      DstBlock		      "Transfer Fcn1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "PID Controller1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Step"
+      SrcPort		      1
+      Points		      [75, 0]
       Branch {
-	Points			[0, -35]
-	DstBlock		"Bus\nCreator"
+	Points			[0, 180]
+	DstBlock		"Sum1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -75]
+	DstBlock		"Sum"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Transfer Fcn1"
+      SrcPort		      1
+      Points		      [85, 0; 0, 25]
+      Branch {
+	Points			[0, 50; -485, 0]
+	DstBlock		"Sum1"
 	DstPort			2
       }
       Branch {
-	Points			[0, 255]
-	DstBlock		"Mux1"
+	Points			[0, 5; 60, 0; 0, -140]
+	DstBlock		"Mux"
 	DstPort			2
       }
     }
     Line {
-      SrcBlock		      "Mux1"
+      SrcBlock		      "Mux"
       SrcPort		      1
-      DstBlock		      "Scope1"
+      DstBlock		      "Scope"
       DstPort		      1
     }
   }
