@@ -30,4 +30,23 @@ archivo ```sistema_experto.m```
 valores ajustados por sintonía Ziegler-Nichols
  - Kp= 6.3600
  - Ki= 0.4968
- - Kd= 20.3561 
+ - Kd= 20.3561
+
+###Rango de valores para el control borroso 
+####error
+```
+valores € [-0.3, 1]
+valor esperado = 0
+```
+####integral 
+```
+valores € [0, 3.5]
+valores esperados = [1.3, 1.4] 
+valor estable = 1.34
+```
+###salida
+```
+valores € [-3, 7]
+valores esperados = [0.6, 0.7]
+valor estable = [0.667]
+```
