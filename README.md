@@ -1,6 +1,6 @@
-#IAAC: Control borroso (práctica 6)
+#IAAC: Control experto (p3) & Control borroso (p6)
 
-###Ejecutar el sistema experto
+###Sistema experto
 ejecutar el archivo ```control_experto.m```
  - establece la planta a simular (características)
  - hace la presintonía con ZN
@@ -25,3 +25,9 @@ archivo ```sistema_experto.m```
 3. Sobrelongación: 15
 4. Tiempo de asentamiento: 40
 5. Estado estacionario: 1
+
+###Sistema borroso
+valores ajustados por sintonía Ziegler-Nichols
+ - Kp= 6.3600
+ - Ki= 0.4968
+ - Kd= 20.3561 

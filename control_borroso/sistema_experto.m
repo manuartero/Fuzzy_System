@@ -30,19 +30,16 @@ function pid=sistema_experto(pid,num,den,espec)
   while ~salir 
      %% Reglas para tiempo subida
      if ((tr>espec(1)*2) && ~(tiempoSubida))
-        aviso=1
          %pid(1)=pid(1)*1.75;
         pid(1)=pid(1)+3.5;
         tiempoSubida=1;
      end
      if ((tr>espec(1)*1.75) && (tr<=espec(1)*2) && ~(tiempoSubida))  
-        aviso=2
          %pid(1)=pid(1)*1.5;
         pid(1) = pid(1)+2.5;
         tiempoSubida=1;
      end
      if ((tr>espec(1)*1.5) && (tr<=espec(1)*1.75) && ~(tiempoSubida))
-         aviso=3
          %pid(2)=pid(2)*1.75;
          pid(2)=pid(2)+0.3;
          %pid(1)=pid(1)*1.25;
@@ -50,21 +47,18 @@ function pid=sistema_experto(pid,num,den,espec)
          tiempoSubida=1;
      end
      if ((tr>espec(1)*1.25) && (tr<=espec(1)*1.5) && ~(tiempoSubida))
-        aviso=4
         %pid(2)=pid(2)*1.5;
         pid(2)=pid(2)+0.3;
         pid(1)=pid(1)+1;
         tiempoSubida=1;
      end
      if ((tr>espec(1)) && (tr<=espec(1)*1.25) && ~(tiempoSubida))
-        aviso=5
         pid(2)=pid(2) + 0.2;
         pid(1)=pid(1)+0.5;
         tiempoSubida=1;
      end
      % disminuir kp     
      if ((espec(1))>tr && ~(tiempoSubida))
-        aviso=6
          pid(1)=pid(1)-0.08;
         tiempoSubida=1;
      end 
