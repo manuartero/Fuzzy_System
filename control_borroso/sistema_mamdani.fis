@@ -2,9 +2,9 @@
 Name='sistema_mamdani'
 Type='mamdani'
 Version=2.0
-NumInputs=1
+NumInputs=2
 NumOutputs=1
-NumRules=5
+NumRules=0
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -12,27 +12,27 @@ AggMethod='max'
 DefuzzMethod='centroid'
 
 [Input1]
-Name='input1'
-Range=[-0.5 1]
-NumMFs=5
-MF1='neg-muy-bajo':'trapmf',[-0.791 -0.79 -0.188728323699422 -0.0292]
-MF2='alto':'trapmf',[-0.0118 0.0939306358381503 0.384 0.489]
-MF3='muy-alto':'trapmf',[0.314 0.558 1.0650289017341 1.11]
-MF4='neg-bajo':'trapmf',[-0.154 -0.140173410404624 -0.0709 -0.0257]
-MF5='cercano':'trapmf',[-0.0535612716763007 -0.0295612716763007 -0.0101156069364162 0.0783387283236993]
+Name='error'
+Range=[-0.3 1]
+NumMFs=3
+MF1='negativo':'gbellmf',[0.208 8.80762614371994 -0.234]
+MF2='estable':'gbellmf',[0.026 1.72441108726629 0.00411]
+MF3='positivo':'gbellmf',[0.546 24.4 0.578736677115987]
+
+[Input2]
+Name='integral'
+Range=[0 3.5]
+NumMFs=3
+MF1='bajo':'trapmf',[-1.11 -0.458 0.776 1.13832288401254]
+MF2='estable':'gbellmf',[0.213 2.99014648357455 1.22]
+MF3='alto':'trapmf',[1.4 1.71434169278997 3.64 4.76]
 
 [Output1]
-Name='output1'
+Name='salida'
 Range=[-3 7]
-NumMFs=4
-MF1='alto':'trapmf',[0.578 1.13 4.02312138728324 5.9]
-MF2='estable':'trimf',[-0.0343468208092479 0.381653179190752 0.970653179190752]
-MF3='bajo':'trapmf',[-7.34 -3.34 -0.37 0.994219653179191]
-MF4='muy-alto':'trapmf',[3.85 4.86705202312139 7.6 7.83]
+NumMFs=3
+MF1='bajar':'trapmf',[-12 -4.02 -0.829 0.315047021943572]
+MF2='subir':'trapmf',[0.706896551724136 2.14 7.83 15.8]
+MF3='estable':'gbellmf',[0.415 4.3 0.542347962382445]
 
 [Rules]
-3, 3 (1) : 1
-2, 3 (1) : 1
-5, 2 (1) : 1
-4, 1 (1) : 1
-1, 4 (1) : 1
